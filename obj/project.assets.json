@@ -241,11 +241,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\J.bertrand\\source\\repos\\GeoStorm\\GeoStorm.csproj",
+      "projectUniqueName": "C:\\Users\\J.bertrand\\Documents\\2021_geostorm_geostorm_csharp-gp1_bertrand_j\\GeoStorm.csproj",
       "projectName": "GeoStorm",
-      "projectPath": "C:\\Users\\J.bertrand\\source\\repos\\GeoStorm\\GeoStorm.csproj",
+      "projectPath": "C:\\Users\\J.bertrand\\Documents\\2021_geostorm_geostorm_csharp-gp1_bertrand_j\\GeoStorm.csproj",
       "packagesPath": "C:\\Users\\J.bertrand\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\J.bertrand\\source\\repos\\GeoStorm\\obj\\",
+      "outputPath": "C:\\Users\\J.bertrand\\Documents\\2021_geostorm_geostorm_csharp-gp1_bertrand_j\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\J.bertrand\\AppData\\Roaming\\NuGet\\NuGet.Config",

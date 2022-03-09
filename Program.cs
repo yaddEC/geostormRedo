@@ -1,57 +1,73 @@
 ﻿using Raylib_cs;
 
-    namespace ImGuiDemo
+namespace GeoStorm
+{
+    class Program
     {
-        class Program
+        static unsafe void Main(string[] args)
         {
-            static unsafe void Main(string[] args)
+            const int screenWidth = 1280;
+            const int screenHeight = 720;
+
+            // Initialization
+            //--------------------------------------------------------------------------------------
+            Raylib.SetConfigFlags(ConfigFlags.FLAG_MSAA_4X_HINT | ConfigFlags.FLAG_VSYNC_HINT | ConfigFlags.FLAG_WINDOW_RESIZABLE);
+            Raylib.InitWindow(screenWidth, screenHeight, "ImGui demo");
+            Raylib.SetTargetFPS(60);
+
+            Raylib.InitAudioDevice();
+
+            ImguiController controller = new ImguiController();
+            //Camera2D camera;
+
+            GameInputs gameInputs = new GameInputs();
+            gameInputs.ScreenSize.X = Raylib.GetScreenWidth();
+            gameInputs.ScreenSize.Y = Raylib.GetScreenHeight();
+
+            Graphics graphics = new Graphics();
+            Game game = new Game(gameInputs);
+
+
+            controller.Load(screenWidth, screenHeight);
+            //--------------------------------------------------------------------------------------
+
+            // Main game loop
+            while (!Raylib.WindowShouldClose())
             {
-                const int screenWidth = 1280;
-                const int screenHeight = 720;
+                // Update
+                //----------------------------------------------------------------------------------
+                float dt = Raylib.GetFrameTime();
 
-                // Initialization
-                //--------------------------------------------------------------------------------------
-                Raylib.SetConfigFlags(ConfigFlags.FLAG_MSAA_4X_HINT | ConfigFlags.FLAG_VSYNC_HINT | ConfigFlags.FLAG_WINDOW_RESIZABLE);
-                Raylib.InitWindow(screenWidth, screenHeight, "ImGui demo");
-                Raylib.SetTargetFPS(60);
+                gameInputs.ScreenSize.X = Raylib.GetScreenWidth();
+                gameInputs.ScreenSize.Y = Raylib.GetScreenHeight();
+                gameInputs.Deltatime = dt;
 
-                Raylib.InitAudioDevice();
+                // Feed the input events to our ImGui controller, which passes them through to ImGui.
+                controller.Update(dt);
+                game.Update(gameInputs);
 
-                ImguiController controller = new ImguiController();
+                //----------------------------------------------------------------------------------
 
-                controller.Load(screenWidth, screenHeight);
-                //--------------------------------------------------------------------------------------
+                // Draw
+                //----------------------------------------------------------------------------------
+                Raylib.BeginDrawing();
+                Raylib.ClearBackground(Color.LIGHTGRAY);
 
-                // Main game loop
-                while (!Raylib.WindowShouldClose())
-                {
-                    // Update
-                    //----------------------------------------------------------------------------------
-                    float dt = Raylib.GetFrameTime();
+                //Raylib.DrawTriangle()
 
-                    // Feed the input events to our ImGui controller, which passes them through to ImGui.
-                    controller.Update(dt);
-                    //----------------------------------------------------------------------------------
+                game.Draw(graphics);
+                controller.Draw();
 
-                    // Draw
-                    //----------------------------------------------------------------------------------
-                    Raylib.BeginDrawing();
-                    Raylib.ClearBackground(Color.LIGHTGRAY);
-
-                    Raylib.DrawText("Hello, world!", screenWidth/2, screenHeight/2, 20, Color.BLACK);
-
-                    controller.Draw();
-
-                    Raylib.EndDrawing();
-                    //----------------------------------------------------------------------------------
-                }
-
-                // De-Initialization
-                //--------------------------------------------------------------------------------------
-                controller.Dispose();
-                Raylib.CloseAudioDevice();
-                Raylib.CloseWindow();
-                //--------------------------------------------------------------------------------------
+                Raylib.EndDrawing();
+                //----------------------------------------------------------------------------------
             }
+
+            // De-Initialization
+            //--------------------------------------------------------------------------------------
+            controller.Dispose();
+            Raylib.CloseAudioDevice();
+            Raylib.CloseWindow();
+            //--------------------------------------------------------------------------------------
         }
+    }
 }
