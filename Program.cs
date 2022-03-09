@@ -36,7 +36,7 @@
                     // Draw
                     //----------------------------------------------------------------------------------
                     Raylib.BeginDrawing();
-                    Raylib.ClearBackground(Color.LIGHTGRAY);
+                    Raylib.ClearBackground(Color.BLACK);
 
                     Raylib.DrawText("Hello, world!", screenWidth/2, screenHeight/2, 20, Color.BLACK);
 

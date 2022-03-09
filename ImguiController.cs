@@ -3,7 +3,7 @@ using System.Numerics;
 using Raylib_cs;
 using ImGuiNET;
 
-namespace ImGuiDemo
+namespace GeoStorm
 {
     /// <summary>
     /// ImGui controller using Raylib-cs
