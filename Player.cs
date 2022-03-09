@@ -8,12 +8,12 @@ using System.Numerics;
 
 namespace GeoStorm
 {
-    class Player
+    class Player: Entity
     {
         public int Life;
 
         public Vector2 Position;
-        
+
         private float Rotation;
 
         void Draw(Graphics graphics)
@@ -23,7 +23,7 @@ namespace GeoStorm
 
         void Update(GameInputs inputs)
         {
-            
+
         }
 
     }
