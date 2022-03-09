@@ -1,0 +1,13 @@
+C:\Users\J.bertrand\source\repos\GeoStorm\bin\Debug\netcoreapp3.1\GeoStorm.exe
+C:\Users\J.bertrand\source\repos\GeoStorm\bin\Debug\netcoreapp3.1\GeoStorm.deps.json
+C:\Users\J.bertrand\source\repos\GeoStorm\bin\Debug\netcoreapp3.1\GeoStorm.runtimeconfig.json
+C:\Users\J.bertrand\source\repos\GeoStorm\bin\Debug\netcoreapp3.1\GeoStorm.runtimeconfig.dev.json
+C:\Users\J.bertrand\source\repos\GeoStorm\bin\Debug\netcoreapp3.1\GeoStorm.dll
+C:\Users\J.bertrand\source\repos\GeoStorm\bin\Debug\netcoreapp3.1\GeoStorm.pdb
+C:\Users\J.bertrand\source\repos\GeoStorm\obj\Debug\netcoreapp3.1\GeoStorm.csproj.AssemblyReference.cache
+C:\Users\J.bertrand\source\repos\GeoStorm\obj\Debug\netcoreapp3.1\GeoStorm.AssemblyInfoInputs.cache
+C:\Users\J.bertrand\source\repos\GeoStorm\obj\Debug\netcoreapp3.1\GeoStorm.AssemblyInfo.cs
+C:\Users\J.bertrand\source\repos\GeoStorm\obj\Debug\netcoreapp3.1\GeoStorm.csproj.CoreCompileInputs.cache
+C:\Users\J.bertrand\source\repos\GeoStorm\obj\Debug\netcoreapp3.1\GeoStorm.dll
+C:\Users\J.bertrand\source\repos\GeoStorm\obj\Debug\netcoreapp3.1\GeoStorm.pdb
+C:\Users\J.bertrand\source\repos\GeoStorm\obj\Debug\netcoreapp3.1\GeoStorm.genruntimeconfig.cache
