@@ -38,8 +38,6 @@ namespace GeoStorm
                 //----------------------------------------------------------------------------------
                 float dt = Raylib.GetFrameTime();
 
-                gameInputs.ScreenSize.X = Raylib.GetScreenWidth();
-                gameInputs.ScreenSize.Y = Raylib.GetScreenHeight();
                 gameInputs.Deltatime = dt;
 
                 // Feed the input events to our ImGui controller, which passes them through to ImGui.
@@ -52,10 +50,10 @@ namespace GeoStorm
                 //----------------------------------------------------------------------------------
                 Raylib.BeginDrawing();
                 Raylib.ClearBackground(Color.LIGHTGRAY);
-
-                //Raylib.DrawTriangle()
+               
 
                 game.Draw(graphics);
+                game.Update(gameInputs);
                 controller.Draw();
 
                 Raylib.EndDrawing();

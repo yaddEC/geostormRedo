@@ -22,6 +22,11 @@ namespace GeoStorm
            
         }
 
+        public void Update()
+        {
+
+        }
+
 
     }
 }

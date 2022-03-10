@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace GeoStorm
 {
-    class BlackHoles:Entity
+    class BlackHoles : Entity
     {
+
     }
 }

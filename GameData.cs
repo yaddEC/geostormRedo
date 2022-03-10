@@ -12,7 +12,6 @@ namespace GeoStorm
         private List<Enemy> enemies;
         private List<Bullet> bullets;
         private List<BlackHoles> blackHoles;
-
         private List<Enemy> enemiesAdded;
         private List<Bullet> bulletsAdded;
         private List<BlackHoles> blackHolesAdded;

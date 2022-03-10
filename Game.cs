@@ -11,16 +11,22 @@ namespace GeoStorm
         GameData data = new GameData();
         public Game(GameInputs inputs)
         {
-            data.Player.Position = inputs.ScreenSize / 2.0f;
+          //  data.Player.Position = inputs.ScreenSize / 2.0f;
         }
         void AddEvent()
         {
 
         }
 
+        public void Draw(Graphics graphics)
+        {
+            graphics.DrawPlayer();
+            graphics.DrawEnemy();
+        }
+
         public void Update(GameInputs inputs)
         {
-            data.Player.Update(inputs); // Position += inputs.MoveAxis * speed;
+           //data.Player.Update(inputs); // Position += inputs.MoveAxis * speed;
         }
 
         public void Render()
