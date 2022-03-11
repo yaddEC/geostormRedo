@@ -1,21 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "d4GXg0pFYvpjTnO0NJK4mnaziEYnLAlCG5fNlqY6n9Xrua/XwAkdMt22ZphALovDrBjtS6fNE2JSH6duFDWXrA==",
+  "dgSpecHash": "Xkxufi2b81Iy0/rpA3tTdKqsDKMGMvUT8m6+9FYvbuGpzkuyMjlE7Osc5kd1nA6QiO/OVUx4BtEwKCN1A91w0A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\J.bertrand\\Documents\\2021_geostorm_geostorm_csharp-gp1_bertrand_j\\GeoStorm.csproj",
+  "projectFilePath": "C:\\Users\\y.dechaux\\Documents\\2021_geostorm_geostorm_csharp-gp1_bertrand_j\\GeoStorm.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\J.bertrand\\.nuget\\packages\\imgui.net\\1.87.0\\imgui.net.1.87.0.nupkg.sha512",
-    "C:\\Users\\J.bertrand\\.nuget\\packages\\raylib-cs\\4.0.0.1\\raylib-cs.4.0.0.1.nupkg.sha512",
-    "C:\\Users\\J.bertrand\\.nuget\\packages\\system.buffers\\4.4.0\\system.buffers.4.4.0.nupkg.sha512",
-    "C:\\Users\\J.bertrand\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
-    "C:\\Users\\J.bertrand\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.4.0\\system.runtime.compilerservices.unsafe.4.4.0.nupkg.sha512"
+    "C:\\Users\\y.dechaux\\.nuget\\packages\\imgui.net\\1.87.0\\imgui.net.1.87.0.nupkg.sha512",
+    "C:\\Users\\y.dechaux\\.nuget\\packages\\raylib-cs\\4.0.0.1\\raylib-cs.4.0.0.1.nupkg.sha512",
+    "C:\\Users\\y.dechaux\\.nuget\\packages\\system.buffers\\4.4.0\\system.buffers.4.4.0.nupkg.sha512",
+    "C:\\Users\\y.dechaux\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\y.dechaux\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.4.0\\system.runtime.compilerservices.unsafe.4.4.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problème de lecture du fichier cache C:\\Users\\J.bertrand\\Documents\\2021_geostorm_geostorm_csharp-gp1_bertrand_j\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }
