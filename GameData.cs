@@ -8,11 +8,11 @@ namespace GeoStorm
 {
     class GameData
     {
+
         private List<Entity> entities;
         private List<Enemy> enemies;
         private List<Bullet> bullets;
         private List<BlackHoles> blackHoles;
-
         private List<Enemy> enemiesAdded;
         private List<Bullet> bulletsAdded;
         private List<BlackHoles> blackHolesAdded;
@@ -20,7 +20,7 @@ namespace GeoStorm
         public IEnumerable<Enemy> Enemies { get { return enemies; } }
         public IEnumerable<Bullet> Bullets { get { return bullets; } }
         public IEnumerable<BlackHoles> BlackHoles { get { return blackHoles; } }
-
+        public Player player = new();
 
         void AddEnemyDelayed(Enemy enemy)
         {

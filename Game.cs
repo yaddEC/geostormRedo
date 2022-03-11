@@ -9,18 +9,28 @@ namespace GeoStorm
     class Game
     {
         GameData data = new GameData();
+        
         public Game(GameInputs inputs)
         {
-            data.Player.Position = inputs.ScreenSize / 2.0f;
+
+          data.player.Position = inputs.ScreenSize / 2.0f;
         }
         void AddEvent()
         {
 
         }
 
+        public void Draw(Graphics graphics)
+        {
+            graphics.DrawPlayer(data.player.Position);
+            graphics.DrawEnemy();
+        }
+
         public void Update(GameInputs inputs)
         {
-            data.Player.Update(inputs); // Position += inputs.MoveAxis * speed;
+           data.player.Update(inputs); 
+           // Position += inputs.MoveAxis * speed;
+           
         }
 
         public void Render()
