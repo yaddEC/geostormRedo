@@ -1,4 +1,5 @@
 ﻿using Raylib_cs;
+using System.Numerics;
 
 namespace GeoStorm
 {
@@ -23,6 +24,7 @@ namespace GeoStorm
             GameInputs gameInputs = new GameInputs();
             gameInputs.ScreenSize.X = Raylib.GetScreenWidth();
             gameInputs.ScreenSize.Y = Raylib.GetScreenHeight();
+            Raylib.ToggleFullscreen();
 
             Graphics graphics = new Graphics();
             Game game = new Game(gameInputs);
@@ -37,11 +39,36 @@ namespace GeoStorm
                 // Update
                 //----------------------------------------------------------------------------------
                 float dt = Raylib.GetFrameTime();
-
-                gameInputs.Deltatime = dt;
-
                 // Feed the input events to our ImGui controller, which passes them through to ImGui.
                 controller.Update(dt);
+
+                // Get game inputs
+                {
+                    gameInputs.Deltatime = dt;
+                    gameInputs.MoveAxis = new Vector2();
+                    gameInputs.Shoot = false;
+                    gameInputs.ShootTarget = Raylib.GetMousePosition();
+                    if (Raylib.IsMouseButtonDown(MouseButton.MOUSE_BUTTON_LEFT))
+                    {
+                        gameInputs.Shoot = true;
+                    }
+                    if (Raylib.IsKeyDown(KeyboardKey.KEY_D))
+                    {
+                        gameInputs.MoveAxis.X += 1;
+                    }
+                    if (Raylib.IsKeyDown(KeyboardKey.KEY_A))
+                    {
+                        gameInputs.MoveAxis.X -= 1;
+                    }
+                    if (Raylib.IsKeyDown(KeyboardKey.KEY_S))
+                    {
+                        gameInputs.MoveAxis.Y += 1;
+                    }
+                    if (Raylib.IsKeyDown(KeyboardKey.KEY_W))
+                    {
+                        gameInputs.MoveAxis.Y -= 1;
+                    }
+                }
                 game.Update(gameInputs);
 
                 //----------------------------------------------------------------------------------
@@ -49,11 +76,9 @@ namespace GeoStorm
                 // Draw
                 //----------------------------------------------------------------------------------
                 Raylib.BeginDrawing();
-                Raylib.ClearBackground(Color.LIGHTGRAY);
-               
+                Raylib.ClearBackground(Color.BLACK);
 
-                game.Draw(graphics);
-                game.Update(gameInputs);
+                game.Render(graphics);
                 controller.Draw();
 
                 Raylib.EndDrawing();

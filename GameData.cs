@@ -8,53 +8,39 @@ namespace GeoStorm
 {
     class GameData
     {
-        private List<Entity> entities;
-        private List<Enemy> enemies;
-        private List<Bullet> bullets;
-        private List<BlackHoles> blackHoles;
-        private List<Enemy> enemiesAdded;
-        private List<Bullet> bulletsAdded;
-        private List<BlackHoles> blackHolesAdded;
-        public IEnumerable<Entity> Entities { get { return entities; } }
-        public IEnumerable<Enemy> Enemies { get { return enemies; } }
-        public IEnumerable<Bullet> Bullets { get { return bullets; } }
-        public IEnumerable<BlackHoles> BlackHoles { get { return blackHoles; } }
+        public Player Player = new();
+        public List<Entity> Entities = new();
+        public List<Enemy> Enemies = new();
+        public List<Bullet> Bullets = new();
+        public List<BlackHoles> BlackHoles = new();
 
+        
+        
+       
 
-        void AddEnemyDelayed(Enemy enemy)
+        public GameData()
         {
-            enemiesAdded.Add(enemy);
+            Entities.Add(Player);
         }
 
-        void AddBulletsDelayed(Bullet bullet)
+        public void AddBullet(Bullet bullet)
         {
-            bulletsAdded.Add(bullet);
+            Bullets.Add(bullet);
+            Entities.Add(bullet);
         }
 
-        void AddBlackHolesDelayed(BlackHoles blackHole)
+        public void AddEnemy(Enemy enemy)
         {
-            blackHolesAdded.Add(blackHole);
+            Enemies.Add(enemy);
+            Entities.Add(enemy);
         }
-
-        void Update()
+        public void Synchronize()
         {
-            entities.AddRange(enemiesAdded);
-            enemies.AddRange(enemiesAdded);
-            entities.AddRange(bulletsAdded);
-            bullets.AddRange(bulletsAdded);
-            entities.AddRange(blackHolesAdded);
-            blackHoles.AddRange(blackHolesAdded);
-            enemiesAdded.Clear();
-            bulletsAdded.Clear();
-            blackHolesAdded.Clear();
-            entities.RemoveAll(s => s.isDead);
-            enemies.RemoveAll(s => s.isDead);
-            bullets.RemoveAll(s => s.isDead);
-            blackHoles.RemoveAll(s => s.isDead);
 
-            
+            Entities.RemoveAll(s => s.IsDead);
+            Enemies.RemoveAll(s => s.IsDead);
+            Bullets.RemoveAll(s => s.IsDead);
+            BlackHoles.RemoveAll(s => s.IsDead);
         }
-
-
     }
 }

@@ -7,15 +7,14 @@ using System.Threading.Tasks;
 
 namespace GeoStorm
 {
-    class Entity
+    abstract class Entity
     {
-        public Vector2 position;
-        public float rotation ;
-        public float collisionRadius ;
-        public bool isDead ;
+        public Vector2 Position;
+        public float Rotation ;
+        public float CollisionRadius ;
+        public bool IsDead;
 
-
-
-
+        abstract public void Update(GameInputs inputs, GameData data);
+        abstract public void Render(Graphics graphics);
     }
 }
