@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "GeoStorm": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}

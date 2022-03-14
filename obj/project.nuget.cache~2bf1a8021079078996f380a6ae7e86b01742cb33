@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "Xkxufi2b81Iy0/rpA3tTdKqsDKMGMvUT8m6+9FYvbuGpzkuyMjlE7Osc5kd1nA6QiO/OVUx4BtEwKCN1A91w0A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\y.dechaux\\Documents\\2021_geostorm_geostorm_csharp-gp1_bertrand_j\\GeoStorm.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\y.dechaux\\.nuget\\packages\\imgui.net\\1.87.0\\imgui.net.1.87.0.nupkg.sha512",
+    "C:\\Users\\y.dechaux\\.nuget\\packages\\raylib-cs\\4.0.0.1\\raylib-cs.4.0.0.1.nupkg.sha512",
+    "C:\\Users\\y.dechaux\\.nuget\\packages\\system.buffers\\4.4.0\\system.buffers.4.4.0.nupkg.sha512",
+    "C:\\Users\\y.dechaux\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\y.dechaux\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.4.0\\system.runtime.compilerservices.unsafe.4.4.0.nupkg.sha512"
+  ],
+  "logs": []
+}
