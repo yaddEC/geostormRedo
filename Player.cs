@@ -14,7 +14,10 @@ namespace GeoStorm
         public int Life = 3;
         public float Speed = 350.0f;
 
-        
+        public Player()
+        {
+            CollisionRadius = 5;
+        }
 
         public override void Update(GameInputs inputs, GameData data)
         {

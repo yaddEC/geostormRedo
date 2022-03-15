@@ -24,7 +24,11 @@ namespace GeoStorm
             GameInputs gameInputs = new GameInputs();
             gameInputs.ScreenSize.X = Raylib.GetScreenWidth();
             gameInputs.ScreenSize.Y = Raylib.GetScreenHeight();
+<<<<<<< HEAD
             
+=======
+           // Raylib.ToggleFullscreen();
+>>>>>>> cb45e423d01efdf88d6dfea34beb592bf8b29011
 
             Graphics graphics = new Graphics();
             Game game = new Game(gameInputs);

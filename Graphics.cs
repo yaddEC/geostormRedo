@@ -67,7 +67,8 @@ namespace GeoStorm
 
         public void DrawBullet(Vector2 pos, float rotation)
         {
-            Matrix3x2 transform = Matrix3x2.CreateTranslation(pos);
+
+            Matrix3x2 transform = Matrix3x2.CreateRotation(rotation) * Matrix3x2.CreateTranslation(pos);
             for (int i = 0; i < BulletShape.Length; i++)
             {
                 Vector2 start = BulletShape[i];
