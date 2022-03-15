@@ -8,7 +8,7 @@ namespace GeoStorm
 {
     public class BlackHoles : Entity
     {
-        override public void Update(GameInputs inputs, GameData data)
+        override public void Update(GameInputs inputs, GameData data, List<Event> Events)
         {
 
         }

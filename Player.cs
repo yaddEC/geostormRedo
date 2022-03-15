@@ -19,7 +19,7 @@ namespace GeoStorm
             CollisionRadius = 15;
         }
 
-        public override void Update(GameInputs inputs, GameData data)
+        public override void Update(GameInputs inputs, GameData data, List<Event> Events)
         {
             Vector2 to = Vector2.Normalize(inputs.ShootTarget - Position);
             Rotation = Atan2(to.Y, to.X);

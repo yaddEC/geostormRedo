@@ -20,7 +20,7 @@ namespace GeoStorm
             CollisionRadius = 10;
         }
 
-        override public void Update(GameInputs inputs, GameData data)
+        override public void Update(GameInputs inputs, GameData data, List<Event> Events)
         {
             Vector2 dist = Vector2.Normalize(Position - data.Player.Position);
 

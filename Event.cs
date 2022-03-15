@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 
 namespace GeoStorm
 {
+
+
     public interface IEventListener
     {
-        public void HandleEvent(List<Event> events, GameData data);
-        
+        public void HandleEvents(IEnumerable<Event> events, GameData data);
+
     }
+
     public class Event
     {
 
@@ -20,5 +23,10 @@ namespace GeoStorm
         public Enemy Enemy;
         public Bullet Bullet; 
     }
-    
+
+    public class BulletShootEvent : Event
+    {
+        
+    }
+
 }
