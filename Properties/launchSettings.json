@@ -2,6 +2,7 @@
   "profiles": {
     "GeoStorm": {
       "commandName": "Project",
+      "workingDirectory": "C:\\Users\\y.dechaux\\Documents\\2021_geostorm_geostorm_csharp-gp1_bertrand_j",
       "nativeDebugging": true
     }
   }

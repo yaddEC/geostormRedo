@@ -1,4 +1,5 @@
 ﻿using System;
+using Raylib_cs;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,21 +9,7 @@ namespace GeoStorm
 {
 
 
-    public interface GameEngine : IEventListener
-    {
-        public void HandleEvents(IEnumerable<Event> events, GameData data)
-        {
-            foreach (Event e in events)
-            {
-                switch (e)
-                {
-                    case BulletShootEvent bulletShootEvent:
-                        break;
-                }
-            }
-        }
-
-    }
+   
 
     public class Event
     {

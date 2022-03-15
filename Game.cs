@@ -15,6 +15,7 @@ namespace GeoStorm
         GameData data = new GameData();
         Random random = new();
         List<Event> Events = new();
+        List<IEventListener> EventListeners = new();
 
         public Game(GameInputs inputs)
         {
@@ -28,6 +29,11 @@ namespace GeoStorm
                 data.AddEnemy(enemy);
             }
             // Ajoute 10 enemies
+        }
+
+        public void AddEventListener(IEventListener eventListener)
+        {
+            EventListeners.Add(eventListener);
         }
 
         public void Update(GameInputs inputs)
@@ -59,11 +65,13 @@ namespace GeoStorm
                         enemy.Position = new Vector2(random.Next(17, (int)inputs.ScreenSize.X), random.Next(17, (int)inputs.ScreenSize.Y));
                     data.AddEnemy(enemy);
                 }
-                       
+             foreach(IEventListener ie in EventListeners)
+                {
+                    ie.HandleEvent(Events, data);
+                }
             }
 
-            // foreach listener in listeners
-            //    listeners.HandleEvents(Events, data);
+
 
             data.Synchronize();
         }
