@@ -15,7 +15,10 @@ namespace GeoStorm
         float speed = 200;
         Vector2 Velocity = new Vector2();
 
-
+        public Enemy()
+        {
+            CollisionRadius = 10;
+        }
 
         override public void Update(GameInputs inputs, GameData data)
         {

@@ -18,9 +18,9 @@ namespace GeoStorm
 
             if (inputs.Shoot && timer <= 0.0f)
             {
-                Bullet b = new Bullet();
-                b.Position = data.Player.Position;
-                b.SetRotation(data.Player.Rotation);
+                Bullet b = new Bullet(data.Player);
+
+                
                 data.AddBullet(b);
 
                 timer += 0.07f;

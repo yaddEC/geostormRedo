@@ -13,19 +13,26 @@ namespace GeoStorm
         float speed = 800.0f;
         Vector2 Velocity = new();
 
+        public Bullet(Player player)
+        {
+            CollisionRadius = 1;
+
+            Position = player.Position;
+
+            SetRotation(player.Rotation);
+        }
+
+
         public void SetRotation(float rotation)
         {
             Rotation = rotation;
 
-            Velocity = new Vector2(Cos(rotation),Sin(rotation))*speed;
+            Velocity = new Vector2(Cos(rotation), Sin(rotation)) * speed;
 
         }
 
         override public void Update(GameInputs inputs, GameData data)
         {
-            Vector2 to = Vector2.Normalize(inputs.ShootTarget - Position);
-            Rotation = Atan2(to.Y, to.X);
-
             Position += Velocity * inputs.Deltatime;
             if (Position.X >= inputs.ScreenSize.X || Position.Y >= inputs.ScreenSize.Y)
                 IsDead = true;
