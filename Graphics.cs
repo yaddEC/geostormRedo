@@ -8,11 +8,12 @@ using Raylib_cs;
 
 namespace GeoStorm
 {
-   public class Graphics
+   public class Graphics : IEventListener
     {
         Vector2[] PlayerShape = new Vector2[8];
         Vector2[] BulletShape = new Vector2[4];
         Vector2[] GruntShape = new Vector2[4];
+        Vector2[] LevelUpShape = new Vector2[4];
         public void LoadPlayerShape()
         {
             PlayerShape[0] = new Vector2(-1.0f, 0.0f) * 20;
@@ -41,6 +42,14 @@ namespace GeoStorm
             GruntShape[3] = new Vector2(-0.0f, 1.0f) * 18 ;
         }
 
+        public void LoadLevelUpShape()
+        {
+            LevelUpShape[0] = new Vector2(-1.0f, 0.0f) * 18;
+            LevelUpShape[1] = new Vector2(-0.0f, -1.0f) * 18;
+            LevelUpShape[2] = new Vector2(1.0f, 0.0f) * 18;
+            LevelUpShape[3] = new Vector2(-0.0f, 1.0f) * 18;
+        }
+
 
 
         public Graphics()
@@ -48,6 +57,7 @@ namespace GeoStorm
             LoadPlayerShape();
             LoadBulletShape();
             LoadGruntShape();
+            LoadLevelUpShape();
         }
 
         public void DrawPlayer(Vector2 pos, float rotation)
@@ -80,7 +90,7 @@ namespace GeoStorm
                 Raylib.DrawLineV(start, end, Color.WHITE);
             }
         }
-        public void DrawEnemy(Vector2 pos)
+        public void DrawGrunt(Vector2 pos)
         {
             Matrix3x2 transform = Matrix3x2.CreateTranslation(pos);
             for (int i = 0; i<GruntShape.Length;i++)
@@ -92,6 +102,24 @@ namespace GeoStorm
                 end = Vector2.Transform(end, transform);
 
                 Raylib.DrawLineV(start, end, Color.BLUE);
+            }
+        }
+
+        public void DrawLevelUp(Vector2 pos)
+        {
+            Raylib.DrawCircle((int)pos.X, (int)pos.Y, 3, Color.YELLOW);
+        }
+
+        public void HandleEvent(List<Event> events, GameData data)
+        {
+            foreach (Event ev in events)
+            {
+                switch (ev)
+                {
+                    case EnemyKilled e:
+                        Console.WriteLine("Graphics : enemy killed");
+                        break;
+                }
             }
         }
     }

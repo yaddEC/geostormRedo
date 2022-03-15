@@ -10,16 +10,18 @@ namespace GeoStorm
 {
      public class Bullet : Entity
     {
+        Player player = new();
         float speed = 800.0f;
         Vector2 Velocity = new();
 
         public Bullet(Player player)
         {
             CollisionRadius = 1;
-
             Position = player.Position;
-
-            SetRotation(player.Rotation);
+            
+            Rotation = player.Rotation;
+            
+            SetRotation(Rotation);
         }
 
 

@@ -28,6 +28,7 @@ namespace GeoStorm
 
             Graphics graphics = new Graphics();
             Game game = new Game(gameInputs);
+            game.AddEventListener(graphics);
 
 
             controller.Load(screenWidth, screenHeight);
@@ -36,6 +37,7 @@ namespace GeoStorm
             // Main game loop
             while (!Raylib.WindowShouldClose())
             {
+
                 // Update
                 //----------------------------------------------------------------------------------
                 float dt = Raylib.GetFrameTime();
@@ -81,9 +83,19 @@ namespace GeoStorm
                 //----------------------------------------------------------------------------------
                 Raylib.BeginDrawing();
                 Raylib.ClearBackground(Color.BLACK);
+                if (game.data.Enemies.Count == 0)
+                    Raylib.DrawText("you win", screenHeight / 2, screenWidth / 5, 200, Color.GOLD);
+                if (game.data.Player.IsDead)
+                   Raylib.DrawText("GAME OVER", screenHeight / 15, screenWidth / 5, 200, Color.RED);
+                if (!game.data.Player.IsDead)
+                {
+                    Raylib.DrawText($"Score :{game.score}", 0, 0, 20, Color.WHITE);
+                    Raylib.DrawText($"Life :{game.data.Player.Life}", 0, 20, 20, Color.WHITE);
+                    Raylib.DrawText($"weapon level :{game.data.Player.weapon.level}", 0, 35, 20, Color.WHITE);
+                    game.Render(graphics);
+                    controller.Draw();
+                }
 
-                game.Render(graphics);
-                controller.Draw();
 
                 Raylib.EndDrawing();
                 //----------------------------------------------------------------------------------

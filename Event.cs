@@ -8,7 +8,7 @@ namespace GeoStorm
 {
     public interface IEventListener
     {
-        public void HandleEvent(GameData data);
+        public void HandleEvent(List<Event> events, GameData data);
         
     }
     public class Event
