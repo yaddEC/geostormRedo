@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GeoStorm
 {
-    class BlackHoles : Entity
+    public class BlackHoles : Entity
     {
         override public void Update(GameInputs inputs, GameData data)
         {

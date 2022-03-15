@@ -24,7 +24,7 @@ namespace GeoStorm
             GameInputs gameInputs = new GameInputs();
             gameInputs.ScreenSize.X = Raylib.GetScreenWidth();
             gameInputs.ScreenSize.Y = Raylib.GetScreenHeight();
-            Raylib.ToggleFullscreen();
+            
 
             Graphics graphics = new Graphics();
             Game game = new Game(gameInputs);
@@ -67,6 +67,10 @@ namespace GeoStorm
                     if (Raylib.IsKeyDown(KeyboardKey.KEY_W))
                     {
                         gameInputs.MoveAxis.Y -= 1;
+                    }
+                    if (Raylib.IsKeyPressed(KeyboardKey.KEY_F))
+                    {
+                        Raylib.ToggleFullscreen();
                     }
                 }
                 game.Update(gameInputs);

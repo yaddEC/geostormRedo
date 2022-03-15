@@ -8,7 +8,7 @@ using static System.MathF;
 
 namespace GeoStorm
 {
-    class Player : Entity
+    public class Player : Entity
     {
         Weapon weapon = new();
         public int Life = 3;

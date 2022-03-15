@@ -8,7 +8,7 @@ using Raylib_cs;
 
 namespace GeoStorm
 {
-    class Graphics
+   public class Graphics
     {
         Vector2[] PlayerShape = new Vector2[8];
         Vector2[] BulletShape = new Vector2[4];

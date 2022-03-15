@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace GeoStorm
 {
-    class GameData
+    public class GameData
     {
         public Player Player = new();
         public List<Entity> Entities = new();
         public List<Enemy> Enemies = new();
         public List<Bullet> Bullets = new();
         public List<BlackHoles> BlackHoles = new();
+        public List<Event> Events = new();
 
         
         

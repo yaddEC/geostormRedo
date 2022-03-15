@@ -9,7 +9,7 @@ using static System.MathF;
 namespace GeoStorm
 {
     
-    class Enemy : Entity
+   public class Enemy : Entity
     {
         Random random = new();
         float speed = 200;

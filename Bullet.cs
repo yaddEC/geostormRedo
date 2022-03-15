@@ -8,7 +8,7 @@ using static System.MathF;
 
 namespace GeoStorm
 {
-    class Bullet : Entity
+     public class Bullet : Entity
     {
         float speed = 800.0f;
         Vector2 Velocity = new();

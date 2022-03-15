@@ -8,7 +8,7 @@ using Raylib_cs;
 
 namespace GeoStorm
 {
-    class GameInputs
+    public class GameInputs
     {
 
 

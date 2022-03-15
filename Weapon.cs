@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GeoStorm
 {
-    class Weapon
+   public  class Weapon
     {
         float timer = 0.0f;
         public void Update(GameInputs inputs, GameData data )

@@ -9,7 +9,7 @@ using static System.MathF;
 
 namespace GeoStorm
 {
-    class Game
+   public class Game : IEventListener
     {
         GameData data = new GameData();
         Random random = new();
@@ -29,10 +29,16 @@ namespace GeoStorm
            // Ajoute 10 enemies
         }
 
+        public void HandleEvent(GameData data)
+        {
+            if()
+        }
+
         public void Update(GameInputs inputs)
         {
             for (int i = 0; i < data.Entities.Count; i++)
                 data.Entities[i].Update(inputs, data);
+            
 
             data.Synchronize();
         }

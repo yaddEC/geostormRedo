@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace GeoStorm
 {
-    abstract class Entity
+   public abstract class Entity
     {
         public Vector2 Position;
         public float Rotation ;
