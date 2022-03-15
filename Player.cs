@@ -10,7 +10,7 @@ namespace GeoStorm
 {
     public class Player : Entity
     {
-        Weapon weapon = new();
+        public Weapon weapon = new();
         public int Life = 3;
         public float Speed = 350.0f;
 
@@ -19,7 +19,7 @@ namespace GeoStorm
             CollisionRadius = 5;
         }
 
-        public override void Update(GameInputs inputs, GameData data)
+        public override void Update(GameInputs inputs, GameData data, List<Event> Events)
         {
             
             
@@ -45,7 +45,7 @@ namespace GeoStorm
                 Position.Y = 0;
             }
 
-            weapon.Update(inputs, data);
+            weapon.Update(inputs, data, Events);
 
         }
 

@@ -31,7 +31,7 @@ namespace GeoStorm
 
         }
 
-        override public void Update(GameInputs inputs, GameData data)
+        override public void Update(GameInputs inputs, GameData data, List<Event> Events)
         {
             Position += Velocity * inputs.Deltatime;
             if (Position.X >= inputs.ScreenSize.X || Position.Y >= inputs.ScreenSize.Y)

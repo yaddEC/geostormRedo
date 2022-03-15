@@ -13,7 +13,7 @@ namespace GeoStorm
         public List<Enemy> Enemies = new();
         public List<Bullet> Bullets = new();
         public List<BlackHoles> BlackHoles = new();
-        public List<Event> Events = new();
+       
 
         
         

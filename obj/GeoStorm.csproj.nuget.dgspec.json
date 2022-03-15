@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\J.bertrand\\Documents\\2021_geostorm_geostorm_csharp-gp1_bertrand_j\\GeoStorm.csproj": {}
+    "C:\\Users\\y.dechaux\\Documents\\2021_geostorm_geostorm_csharp-gp1_bertrand_j\\GeoStorm.csproj": {}
   },
   "projects": {
-    "C:\\Users\\J.bertrand\\Documents\\2021_geostorm_geostorm_csharp-gp1_bertrand_j\\GeoStorm.csproj": {
+    "C:\\Users\\y.dechaux\\Documents\\2021_geostorm_geostorm_csharp-gp1_bertrand_j\\GeoStorm.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\J.bertrand\\Documents\\2021_geostorm_geostorm_csharp-gp1_bertrand_j\\GeoStorm.csproj",
+        "projectUniqueName": "C:\\Users\\y.dechaux\\Documents\\2021_geostorm_geostorm_csharp-gp1_bertrand_j\\GeoStorm.csproj",
         "projectName": "GeoStorm",
-        "projectPath": "C:\\Users\\J.bertrand\\Documents\\2021_geostorm_geostorm_csharp-gp1_bertrand_j\\GeoStorm.csproj",
-        "packagesPath": "C:\\Users\\J.bertrand\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\J.bertrand\\Documents\\2021_geostorm_geostorm_csharp-gp1_bertrand_j\\obj\\",
+        "projectPath": "C:\\Users\\y.dechaux\\Documents\\2021_geostorm_geostorm_csharp-gp1_bertrand_j\\GeoStorm.csproj",
+        "packagesPath": "C:\\Users\\y.dechaux\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\y.dechaux\\Documents\\2021_geostorm_geostorm_csharp-gp1_bertrand_j\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\J.bertrand\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\y.dechaux\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

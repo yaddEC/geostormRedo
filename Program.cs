@@ -28,6 +28,10 @@ namespace GeoStorm
 
             Graphics graphics = new Graphics();
             Game game = new Game(gameInputs);
+            Shader shaders = Raylib.LoadShader(null, "resources/bloom.fs");
+            int shaderloc = Raylib.GetShaderLocation(shaders, "screen");
+            float[] screenRes = { (float)screenWidth, (float)screenHeight };
+            Raylib.SetShaderValue(shaders, shaderloc, screenRes, ShaderUniformDataType.SHADER_UNIFORM_VEC2);
 
 
             controller.Load(screenWidth, screenHeight);
@@ -36,12 +40,13 @@ namespace GeoStorm
             // Main game loop
             while (!Raylib.WindowShouldClose())
             {
+                Raylib.BeginShaderMode(shaders);
                 // Update
                 //----------------------------------------------------------------------------------
                 float dt = Raylib.GetFrameTime();
                 // Feed the input events to our ImGui controller, which passes them through to ImGui.
                 controller.Update(dt);
-
+          
                 // Get game inputs
                 {
                     gameInputs.Deltatime = dt;
@@ -81,10 +86,12 @@ namespace GeoStorm
                 //----------------------------------------------------------------------------------
                 Raylib.BeginDrawing();
                 Raylib.ClearBackground(Color.BLACK);
-
+                Raylib.BeginBlendMode(BlendMode.BLEND_ALPHA);
+                
                 game.Render(graphics);
                 controller.Draw();
-
+                Raylib.EndBlendMode();
+                Raylib.EndShaderMode();
                 Raylib.EndDrawing();
                 //----------------------------------------------------------------------------------
             }

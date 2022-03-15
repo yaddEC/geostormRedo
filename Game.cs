@@ -10,11 +10,11 @@ using static System.MathF;
 
 namespace GeoStorm
 {
-   public class Game : IEventListener
+   public class Game
     {
         GameData data = new GameData();
         Random random = new();
-
+        List<Event> Events = new();
 
         public Game(GameInputs inputs)
         {
@@ -30,16 +30,13 @@ namespace GeoStorm
             // Ajoute 10 enemies
         }
 
-        public void HandleEvent(GameData data)
-        {
-            
-        }
-
         public void Update(GameInputs inputs)
         {
+             List<Event> Events = new();
+
             for (int i = 0; i < data.Entities.Count; i++)
             {
-                data.Entities[i].Update(inputs, data);
+                data.Entities[i].Update(inputs, data, Events);
             
 
             }
@@ -64,6 +61,9 @@ namespace GeoStorm
                 }
                        
             }
+
+            // foreach listener in listeners
+            //    listeners.HandleEvents(Events, data);
 
             data.Synchronize();
         }

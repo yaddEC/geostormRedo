@@ -15,7 +15,7 @@ namespace GeoStorm
         public float CollisionRadius ;
         public bool IsDead;
 
-        abstract public void Update(GameInputs inputs, GameData data);
+        abstract public void Update(GameInputs inputs, GameData data, List<Event> Events);
         abstract public void Render(Graphics graphics);
     }
 }
