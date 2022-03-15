@@ -32,7 +32,7 @@ namespace GeoStorm
 
         public void HandleEvent(GameData data)
         {
-            if()
+            
         }
 
         public void Update(GameInputs inputs)
