@@ -9,22 +9,39 @@ namespace GeoStorm
 {
    public  class Weapon
     {
-        public float timer = 0.0f;
+        float timer = 0.0f;
+        float duration = 0.3f;
+        public int nbBullets = 1;
+        public  int level = 1;
+
+        public void IncreaseLevel()
+        {
+            level += 1;
+            if (level == 2)
+                duration = 0.1f;
+            if (level == 3)
+                duration = 0.05f;
+                nbBullets = 3;
+        }
+
+
         public void Update(GameInputs inputs, GameData data, List<Event> Events)
         {
+            BulletShootEvent shoot = new();
+            Events.Add(shoot);
             if(timer > 0)
              timer -= inputs.Deltatime;
 
-
             if (inputs.Shoot && timer <= 0.0f)
             {
-                Bullet b = new Bullet(data.Player);
-                data.AddBullet(b);
-                timer += 0.07f;
+                for (int i = 0; i < nbBullets; ++i)
+                {
+                    Bullet b = new Bullet(data.Player);
+                    data.AddBullet(b);
+                }
 
-                BulletShootEvent shot = new BulletShootEvent();
-                Events.Add(shot);
-               
+                timer += duration;
+                
             }
         }
     }

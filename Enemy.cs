@@ -30,7 +30,7 @@ namespace GeoStorm
         }
         override public void Render(Graphics graphics)
         {
-            graphics.DrawEnemy(Position);
+            graphics.DrawGrunt(Position);
         }
     }
 }

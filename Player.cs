@@ -16,13 +16,11 @@ namespace GeoStorm
 
         public Player()
         {
-            CollisionRadius = 5;
+            CollisionRadius = 15;
         }
 
         public override void Update(GameInputs inputs, GameData data, List<Event> Events)
         {
-            
-            
             Vector2 to = Vector2.Normalize(inputs.ShootTarget - Position);
             Rotation = Atan2(to.Y, to.X);
 
@@ -45,6 +43,8 @@ namespace GeoStorm
                 Position.Y = 0;
             }
 
+            if(Life == 0)
+                IsDead = true;
             weapon.Update(inputs, data, Events);
 
         }
@@ -57,4 +57,4 @@ namespace GeoStorm
     }
 }
 
-    
+ 

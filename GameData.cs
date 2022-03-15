@@ -14,9 +14,10 @@ namespace GeoStorm
         public List<Enemy> Enemies = new();
         public List<Bullet> Bullets = new();
         public List<BlackHoles> BlackHoles = new();
-       
+        public List<LevelUp> LevelUps = new();
         
 
+        
         
         
        
@@ -25,6 +26,7 @@ namespace GeoStorm
         {
             Entities.Add(Player);
         }
+
 
         public void AddBullet(Bullet bullet)
         {
@@ -37,11 +39,17 @@ namespace GeoStorm
             Enemies.Add(enemy);
             Entities.Add(enemy);
         }
+        public void AddLevel(LevelUp level)
+        {
+            LevelUps.Add(level);
+            Entities.Add(level);
+        }
         public void Synchronize()
         {
 
             Entities.RemoveAll(s => s.IsDead);
             Enemies.RemoveAll(s => s.IsDead);
+            LevelUps.RemoveAll(s => s.IsDead);
             Bullets.RemoveAll(s => s.IsDead);
             BlackHoles.RemoveAll(s => s.IsDead);
         }

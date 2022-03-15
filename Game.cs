@@ -12,10 +12,11 @@ namespace GeoStorm
 {
    public class Game
     {
-        GameData data = new GameData();
+        public  GameData data = new GameData();
         Random random = new();
         List<Event> Events = new();
         List<IEventListener> EventListeners = new();
+        public int score = 0;
 
         public Game(GameInputs inputs)
         {
@@ -28,9 +29,13 @@ namespace GeoStorm
                     enemy.Position = new Vector2(random.Next(17, (int)inputs.ScreenSize.X), random.Next(17, (int)inputs.ScreenSize.Y));
                 data.AddEnemy(enemy);
             }
-            // Ajoute 10 enemies
+            for (int i = 0; i < 3; i++)
+            {
+                LevelUp level = new();
+                level.Position = new Vector2(random.Next(5, (int)inputs.ScreenSize.X), random.Next(5, (int)inputs.ScreenSize.Y));
+                data.AddLevel(level);
+            }
         }
-
         public void AddEventListener(IEventListener eventListener)
         {
             EventListeners.Add(eventListener);
@@ -38,44 +43,48 @@ namespace GeoStorm
 
         public void Update(GameInputs inputs)
         {
-             List<Event> Events = new();
+            List<Event> events = new();
 
             for (int i = 0; i < data.Entities.Count; i++)
             {
                 data.Entities[i].Update(inputs, data, Events);
-            
-
             }
-            foreach (Bullet bull in data.Bullets)
+            foreach (Enemy enemy in data.Enemies)
             {
-                foreach(Enemy enn in data.Enemies)
+                foreach(Bullet bull in data.Bullets)
                 {
-                    if(Raylib.CheckCollisionCircles(bull.Position,bull.CollisionRadius,enn.Position,enn.CollisionRadius))
+                    if(Raylib.CheckCollisionCircles(bull.Position,bull.CollisionRadius, enemy.Position, enemy.CollisionRadius))
                     {
                         bull.IsDead = true;
-                        enn.IsDead = true;
-                        
+                        enemy.IsDead = true;
+                        events.Add(new EnemyKilled());
+                        score += 10;
                     }
-                }
-                if(data.Enemies.Count<10)
+                } 
+
+                if (Raylib.CheckCollisionCircles(data.Player.Position, data.Player.CollisionRadius, enemy.Position, enemy.CollisionRadius))
                 {
-                    Enemy enemy = new();
-                    enemy.Position = new Vector2(random.Next(17, (int)inputs.ScreenSize.X), random.Next(17, (int)inputs.ScreenSize.Y));
-                    if (enemy.Position == data.Player.Position)
-                        enemy.Position = new Vector2(random.Next(17, (int)inputs.ScreenSize.X), random.Next(17, (int)inputs.ScreenSize.Y));
-                    data.AddEnemy(enemy);
-                }
-             foreach(IEventListener ie in EventListeners)
-                {
-                    ie.HandleEvent(Events, data);
+                    data.Player.Life -= 1;
+                    enemy.IsDead = true;
                 }
             }
 
-
+            foreach(LevelUp level in data.LevelUps)
+            {
+                if(Raylib.CheckCollisionCircles(data.Player.Position,data.Player.CollisionRadius,level.Position,level.CollisionRadius))
+                {
+                    level.IsDead = true;
+                    data.Player.weapon.IncreaseLevel();
+                }
+            }
 
             data.Synchronize();
+
+            foreach (IEventListener eventListener in EventListeners)
+                eventListener.HandleEvent(events, data);
         }
 
+ 
         public void Render(Graphics graphics)
         {
             foreach (Entity entity in data.Entities)
