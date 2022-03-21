@@ -10,7 +10,11 @@ using static System.MathF;
 
 namespace GeoStorm
 {
+<<<<<<< HEAD
    public class Game
+=======
+   public class Game : IEventListener
+>>>>>>> 032f8b7 (add enemy fonction)
     {
         public  GameData data = new GameData();
         Random random = new();
@@ -29,6 +33,7 @@ namespace GeoStorm
                     enemy.Position = new Vector2(random.Next(17, (int)inputs.ScreenSize.X), random.Next(17, (int)inputs.ScreenSize.Y));
                 data.AddEnemy(enemy);
             }
+<<<<<<< HEAD
             for (int i = 0; i < 3; i++)
             {
                 LevelUp level = new();
@@ -39,6 +44,8 @@ namespace GeoStorm
         public void AddEventListener(IEventListener eventListener)
         {
             EventListeners.Add(eventListener);
+=======
+>>>>>>> 032f8b7 (add enemy fonction)
         }
 
         public void Update(GameInputs inputs)
@@ -89,6 +96,14 @@ namespace GeoStorm
         {
             foreach (Entity entity in data.Entities)
                 entity.Render(graphics);
+        }
+
+        public void HandleEvents(in List<Event> events)
+        {
+            foreach(Event Event in events)
+            {
+
+            }
         }
     }
 }

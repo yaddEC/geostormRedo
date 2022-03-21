@@ -8,7 +8,11 @@ using static System.MathF;
 
 namespace GeoStorm
 {
+<<<<<<< HEAD
     public class Player : Entity
+=======
+   public class Player : Entity
+>>>>>>> 032f8b7 (add enemy fonction)
     {
         public Weapon weapon = new();
         public int Life = 3;
@@ -23,7 +27,7 @@ namespace GeoStorm
         {
             Vector2 to = Vector2.Normalize(inputs.ShootTarget - Position);
             Rotation = Atan2(to.Y, to.X);
-
+            
             Position += inputs.MoveAxis * Speed * inputs.Deltatime;
 
             if (Position.X >= inputs.ScreenSize.X)

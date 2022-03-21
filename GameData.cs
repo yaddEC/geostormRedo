@@ -14,8 +14,12 @@ namespace GeoStorm
         public List<Enemy> Enemies = new();
         public List<Bullet> Bullets = new();
         public List<BlackHoles> BlackHoles = new();
+<<<<<<< HEAD
         public List<LevelUp> LevelUps = new();
         
+=======
+        public List<Event> Events = new();
+>>>>>>> 032f8b7 (add enemy fonction)
 
         
         

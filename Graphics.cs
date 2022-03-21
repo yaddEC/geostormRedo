@@ -8,7 +8,11 @@ using Raylib_cs;
 
 namespace GeoStorm
 {
+<<<<<<< HEAD
    public class Graphics : IEventListener
+=======
+   public class Graphics
+>>>>>>> 032f8b7 (add enemy fonction)
     {
         Vector2[] PlayerShape = new Vector2[8];
         Vector2[] BulletShape = new Vector2[4];
@@ -85,7 +89,7 @@ namespace GeoStorm
                 Vector2 end = BulletShape[(i + 1) % BulletShape.Length];
 
                 start = Vector2.Transform(start, transform);
-                end = Vector2.Transform(end, transform);
+                end = Vector2.Transform(end,     transform);
 
                 Raylib.DrawLineV(start, end, Color.WHITE);
             }
@@ -99,7 +103,7 @@ namespace GeoStorm
                 Vector2 end = GruntShape[(i + 1) % GruntShape.Length];
 
                 start = Vector2.Transform(start, transform);
-                end = Vector2.Transform(end, transform);
+                end = Vector2.Transform(end,     transform);
 
                 Raylib.DrawLineV(start, end, Color.BLUE);
             }

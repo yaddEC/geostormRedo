@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\y.dechaux\\Documents\\2021_geostorm_geostorm_csharp-gp1_bertrand_j\\GeoStorm.csproj": {}
   },
   "projects": {
@@ -15,6 +16,22 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\y.dechaux\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+    "C:\\Users\\Oxbey\\Documents\\2021_geostorm_geostorm_csharp-gp1_bertrand_j\\GeoStorm.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Oxbey\\Documents\\2021_geostorm_geostorm_csharp-gp1_bertrand_j\\GeoStorm.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Oxbey\\Documents\\2021_geostorm_geostorm_csharp-gp1_bertrand_j\\GeoStorm.csproj",
+        "projectName": "GeoStorm",
+        "projectPath": "C:\\Users\\Oxbey\\Documents\\2021_geostorm_geostorm_csharp-gp1_bertrand_j\\GeoStorm.csproj",
+        "packagesPath": "C:\\Users\\Oxbey\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Oxbey\\Documents\\2021_geostorm_geostorm_csharp-gp1_bertrand_j\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Oxbey\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 032f8b7 (add enemy fonction)
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -64,7 +81,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

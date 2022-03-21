@@ -72,10 +72,14 @@ namespace GeoStorm
                     {
                         gameInputs.MoveAxis.Y -= 1;
                     }
+<<<<<<< HEAD
                     if (Raylib.IsKeyPressed(KeyboardKey.KEY_F))
                     {
                         Raylib.ToggleFullscreen();
                     }
+=======
+
+>>>>>>> 032f8b7 (add enemy fonction)
                 }
                 game.Update(gameInputs);
 

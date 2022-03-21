@@ -8,7 +8,11 @@ using Raylib_cs;
 
 namespace GeoStorm
 {
+<<<<<<< HEAD
     public class GameInputs
+=======
+   public  class GameInputs
+>>>>>>> 032f8b7 (add enemy fonction)
     {
 
 

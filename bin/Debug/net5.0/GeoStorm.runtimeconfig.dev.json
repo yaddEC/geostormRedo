@@ -1,8 +1,13 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
+<<<<<<< HEAD
       "C:\\Users\\y.dechaux\\.dotnet\\store\\|arch|\\|tfm|",
       "C:\\Users\\y.dechaux\\.nuget\\packages"
+=======
+      "C:\\Users\\Oxbey\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Oxbey\\.nuget\\packages"
+>>>>>>> 032f8b7 (add enemy fonction)
     ]
   }
 }

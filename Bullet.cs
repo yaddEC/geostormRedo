@@ -8,7 +8,11 @@ using static System.MathF;
 
 namespace GeoStorm
 {
+<<<<<<< HEAD
      public class Bullet : Entity
+=======
+  public class Bullet : Entity
+>>>>>>> 032f8b7 (add enemy fonction)
     {
         Player player = new();
         float speed = 800.0f;
